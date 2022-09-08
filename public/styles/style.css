@@ -20,6 +20,18 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  gap: 10px;
+}
+
+h1 {
+  color: white;
+}
+
+#messages {
+  width: 500px;
+  height: 650px;
+  background-color: rgb(241, 245, 248);
+  border-radius: 8px;
 }
 
 input {
