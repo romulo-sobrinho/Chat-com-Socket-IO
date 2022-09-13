@@ -28,17 +28,39 @@ h1 {
   color: white;
 }
 
+h2 {
+  color: rgb(69, 6, 6);
+}
+
 #messages {
   width: 500px;
-  min-height: 650px;
+  height: 550px;
   background-color: rgb(241, 245, 248);
   border-radius: 8px;
   padding: 20px;
   display: flex;
+  overflow: auto;
+}
+
+form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+form div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 input {
-  width: 400px;
+  width: 100%;
   padding: 10px 0;
   border-radius: 8px;
 }

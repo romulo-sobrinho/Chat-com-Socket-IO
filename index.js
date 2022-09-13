@@ -5,10 +5,13 @@ const PORT = process.env.PORT || 3000
 const bodyParser = require('body-parser')
 const path = require('path')
 const socketIo = require('socket.io')
+const cors = require('cors')
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/', express.static(path.join(__dirname, 'public')))
+
 
 const server = app.listen(PORT, () => {
   console.log(`Server running on PORT: ${PORT}`)
@@ -23,7 +26,7 @@ io.on('connection', (socket) => {
   socket.emit('update_messages', messages)
   //Quando alguém se conectar envia a mensagem para essa nova conexão
   socket.on('new_message', (data) => {
-    messages.push(data.msg)
+    messages.push(data)
 
     io.emit('update_messages', messages)
   })

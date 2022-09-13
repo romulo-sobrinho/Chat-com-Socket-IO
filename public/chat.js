@@ -1,4 +1,6 @@
-const socket = io('http://localhost:3000')
+const socket = io('localhost:3000')
+
+let user = '';
 
 socket.on('update_messages', (messages) => {
 
@@ -12,7 +14,7 @@ function updateMessagesOnScreen(messages) {
   // ou const div_messages = document.querySelector('#messages')
   let list_messages = '<ul>'
   messages.forEach((message) => {
-    list_messages += `<li>${message}</li>`
+    list_messages += `<li><strong>${message.user}:</strong> ${message.msg}</li>`
   })
   list_messages += '</ul>'
 
@@ -20,14 +22,33 @@ function updateMessagesOnScreen(messages) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const userForm = document.querySelector('#user_form')
+  userForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    user = document.forms['user_form_name']['user_input_name'].value
+    if(user) {
+      userForm.parentNode.removeChild(userForm)
+    } else {
+      alert('Digite o nome de usuário')
+      userErrorMessage = document.querySelector('#user_error_message')
+      userErrorMessage.innerText = "Digite o nome de usuário para prosseguir"
+    }
+  })
+
   const form = document.querySelector('#message_form')
   form.addEventListener('submit', (event) => {
     event.preventDefault();
+
+    if(!user) {
+      alert('Defina uma usuário para enviar mensagem')
+      return
+    }
+
     const message = document.forms['message_form_name']['message_input_name'].value
     new_message(message)
   })
 })
 
 function new_message(message) {
-  socket.emit('new_message', {msg: message})
+  socket.emit('new_message', {user: user, msg: message})
 }
