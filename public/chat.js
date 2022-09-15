@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       alert('Digite o nome de usuário')
       userErrorMessage = document.querySelector('#user_error_message')
-      userErrorMessage.innerText = "Digite o nome de usuário para prosseguir"
+      userErrorMessage.innerText = "Digite o nome de usuário para enviar mensagem"
     }
   })
 
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
 
     if(!user) {
-      alert('Defina uma usuário para enviar mensagem')
+      alert('Defina um usuário para enviar mensagem')
       return
     }
 
