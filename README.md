@@ -1,7 +1,7 @@
-![Rômulo Sobrinho](https://user-images.githubusercontent.com/68918326/180336596-0f001ae5-5ce5-4175-bcea-78eff17add17.PNG)
+![logo](https://user-images.githubusercontent.com/68918326/193332767-8248edfa-cf76-4032-8eed-05bf3037838c.PNG)
 
 <hr>
-<h3 align="center">🎖️PROJETO EM CONSTRUÇÃO🎖️</h3>
+<h3 align="center">🎖️PROJETO FINALIZADO🎖️</h3>
 <hr>
 
 <h1 align="center">Estudos sobre socket io</h1>
@@ -12,7 +12,7 @@
 
 ## Objetivo
 <p align="center">
-  Criar uma aplicação que utilize socket io para comunicação em tempo real entre back end e front end
+  Criar uma aplicação que simule um chat online utilizando socket io para comunicação em tempo real entre back end e front end
 </p>
 
 
@@ -22,5 +22,5 @@
 <br>
 
 <hr>
-<h3 align="center">🎖️PROJETO EM CONSTRUÇÃO🎖️</h3>
+<h3 align="center">🎖️PROJETO FINALIZADO🎖️</h3>
 <hr>
